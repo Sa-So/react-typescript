@@ -61,20 +61,37 @@
 > but in new one we have to make components for each feature in same folder , & make a shared folder for common components , pages 
 
 
-
-
 ## 4. typescript is a pain.
 - quickly testing out if a component works / displays or not takes hell lot of effort !!! arghgdh
-- 
+- generate types for me pls 
+- TODO : create an auto importer ! please !
+- like if I add a folder / file to it , it should get imported here...
+
+## 5. node_modules
+- the size of this thing gonna kill your disk so fast!
+- TODO : create a program to look at all your dir in comp and delete node_modules if you haven't touched/modified the files since last month ! so this can be a cron job
+
+## 6. pls don't run it , for more than a few secs
+- how do i check if I am running it in docker ?
+
+## wtf is nvm ?
+-  their project might have been made on diff node version !
+-  & js doesn't have virtualenv like python ;( we could source into !
 
 
 
 # React Bootsrap 
 ## 1 .tsx
+- error was [stackoverflow](https://stackoverflow.com/questions/57093103/type-argument-list-cannot-be-empty)
 - so I ran into an error on codesandbox saying type parameter not defined & it pointed towards <> (1st line of return !)
 - changing the extension to .tsx made the error go brr
 
 ## 2. I was not destructuring Modal while importing from react-bootstrap !
-- error was [error](https://www.google.com/search?q=Unexpected+token%2C+expected+%22%2C%22+(20%3A4)+18+%7C+%7D%3A+BasicModalProps)+%3D%3E+(+19+%7C+%3CModal+%3E+20+%7C+show%3D%7Bshow%7D+%7C+%5E+21+%7C+size%3D%7Bsize%7D+22+%7C+onHide%3D%7BonClose%7D+23+%7C+dialogClassName%3D%22common-modal%22&rlz=1C5CHFA_enIN873IN874&oq=Unexpected+token%2C+expected+%22%2C%22+(20%3A4)+18+%7C+%7D%3A+BasicModalProps)+%3D%3E+(+19+%7C+++%3CModal+%3E+20+%7C+++++show%3D%7Bshow%7D+%7C+++++%5E+21+%7C+++++size%3D%7Bsize%7D+22+%7C+++++onHide%3D%7BonClose%7D+23+%7C+++++dialogClassName%3D%22common-modal%22&aqs=chrome..69i57.329j0j7&sourceid=chrome&ie=UTF-8)
+- error was [stackoverflow](https://stackoverflow.com/questions/52998987/parsing-error-unexpected-token-expected)
+-[search term] : Unexpected token, expected "," (20:4) 18 | }: BasicModalProps) => ( 19 | <Modal > 20 | show={show} | ^ 21 | size={size} 22 | onHide={onClose} 23 | dialogClassName="common-modal"
 
 ## 3. what is ModalHeader ? why doesn't it work ? Modal.Header works !
+  
+## 4. React Bootstrap kinda doesn't work in csb , styles do not apply for some reason (react + ts + rbs)
+- but [here in csb](https://codesandbox.io/s/react-bootstrap-demo-forked-8dd806?file=/src/App.js) they work !
+  
