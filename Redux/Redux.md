@@ -170,10 +170,37 @@ const rootReducer = combineReducers({
 - you can split reducers in diff files !
 
 
+# 11 Middleware
+<!-- > I am getting lazy to type & my fingers hurt so just see the vid lol pls some1 attach ss -->
+- extend redux with custom func
+- provides 3rd party ext pt. b/w dispatching an action , moment it reaches the reducer
+- uses : logging , crash reporting , perform async tasks etc.
 
+## redux-logger
+1. npm i 
+2. const redLog = require("")
+3. const logger = redLog.createLogger()
+```js
+// get redux applymiddleware func
+const applyMiddleWare = redux.applyMiddleWare()
+// add it to createStore
+cS(rootReducer,applyMiddleWare(logger)) // we can pass as many middleware as we want !
+// remove console.log() from subs coz logger does that !
+```
 
+# 12 async actions
+- fetch from API end pt. & store it in redux store !
+## State
+{
+  loading:true, // display loading spinner
+  data: [], // users
+  error:'' // might fail
+}
 
+## Actions
+FETCH_USERS_REQUEST - fetch list of users
 
+## Reducer
 
 
 
