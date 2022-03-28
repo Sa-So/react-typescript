@@ -1,4 +1,4 @@
-# 1 
+# 1. Intro
 
 ## for js apps
 -  can be used with vanilla js too
@@ -9,7 +9,7 @@
 
 ## predictable
 - state changes, 
-- in redux state transitions are explicit , hence can be tracked 
+- in redux state transitions are explicit (clear/not hidden), hence can be tracked 
 
 ## global state
 - state available to all comp
@@ -25,7 +25,7 @@
 - patterns u will learn will help you
 - 2x , 3x review , a lot of boilerplate code + things to remember
 
-# 2 Getting Started
+# 2. Getting Started
 ## setup
 - install node , npm
 - make folder redux-demo
@@ -34,7 +34,7 @@
 - create index.js with a console statement
 - node index
 
-# 3 core concepts
+# 3. 3 Core concepts
 
 
 
@@ -80,7 +80,7 @@ case BUY_CAKE: return {numOfCakes:state.numOfCakes-1}
 }
 ```
 
-# 5 Actions
+# 5. Actions
 - action.type is a string const
 - action can have other things as well ,but type is necessary for that obj to be an action
 ```js
@@ -101,7 +101,7 @@ function buyCake(){
 // any changes to action object will happen only in 1 place ! (if u want to change it in future , & you will be calling this func everywhere)
 // but then also we could have passed the variable name !!?
 ```
-# 6 Reducers
+# 6. Reducers
 - specify how app's state changes in res to actions sent to store
 - accepts state & actions as args , returns next state of app
 ```js
@@ -188,7 +188,7 @@ cS(rootReducer,applyMiddleWare(logger)) // we can pass as many middleware as we 
 // remove console.log() from subs coz logger does that !
 ```
 
-# 12 async actions
+# 12. async actions
 - fetch from API end pt. & store it in redux store !
 ## State
 {
@@ -199,8 +199,68 @@ cS(rootReducer,applyMiddleWare(logger)) // we can pass as many middleware as we 
 
 ## Actions
 FETCH_USERS_REQUEST - fetch list of users
+FETCH_USERS_SUCCESS 
+FETCH_USERS_FAILURE
+
 
 ## Reducer
+FETCH_USERS_REQUEST - loading : true
+FETCH_USERS_SUCCESS - loading : false , users: data  (from api)
+FETCH_USERS_FAILURE - loading : false , error: error (from api)
+
+## code 
+```js
+const initialState = {
+  loading:true, // display loading spinner
+  data: [], // users
+  error:'' // might fail
+}
+// const actions
+// action creators ?! for passing users [] or error as payload in action !
+const fetchUsersReq = () => {
+  return {
+    type: FETCH_USERS_REQUEST
+  }
+}
+// reducers
+// 7:30 15 singleseater
+
+```
+# 13 Redux thunk middleware
+1. npm i axios redux-thunk
+```js
+const thunkMiddleware = require('redux-thunk').default
+// axios also
+```
+2. async action creator
+- thunk allows us to return function instead of an action which then further dispatches actions ?!
+- & this func doesn't need to be pure (sideffects as async api calls are allowed !)
+- can dispatch 
+```js
+const fetchUser = () => {
+  return function(dispatch) {
+    // sets loading to true
+    
+    dispatch(fetchUsersRequest())
+    axios.get('') 
+    .then(res=>{
+      // res.data
+      const users = res.data.map(user => user.id) // to not flood the log
+      dispatch(fetchUsersSuccess(users))
+    })
+    .catch(err=>{
+    // err.message is our err descr
+      const error = err.message
+      dispatch(fetchUsersFailure(error))
+    })
+  }
+}
+```
+- use jsonplaceholder api
+
+
+
+
 
 
 
