@@ -256,7 +256,18 @@ const fetchUser = () => {
   }
 }
 ```
+- reducers
+```js
+
+```
 - use jsonplaceholder api
+
+# 14. using react
+
+## cake shop app
+### setup
+- npx cra react-redux-demo
+- npm i redux react-redux
 
 
 
