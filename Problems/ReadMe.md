@@ -78,6 +78,10 @@
 -  their project might have been made on diff node version !
 -  & js doesn't have virtualenv like python ;( we could source into !
 
+## storybook doesn't work !
+- the thing made to help people using a good ui to make ccomponents & see how they look doesn't work !
+- & when taking their code you have to remove unncessary files / imports due to storybook !
+
 
 
 # React Bootsrap 
