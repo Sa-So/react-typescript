@@ -5,4 +5,4 @@
 # want to make your own font ? using .otf files ?
 - use [@font-face](https://blog.greenroots.info/3-quick-ways-to-add-fonts-to-your-react-app)
 > you can import css in another css file using @import url("fonts.css") [see](https://www.w3schools.com/cssref/pr_import_rule.asp)
-# [recursion][https://github.com/Sa-So/react-typescript/edit/main/Solutions/ReadMe.md]
+# [recursion](https://github.com/Sa-So/react-typescript/edit/main/Solutions/ReadMe.md)
