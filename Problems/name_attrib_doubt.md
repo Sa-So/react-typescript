@@ -11,4 +11,4 @@
 # use ?
 - I tried entering alphabets inside the w3 website & it takes them (without pattern) 
 - & also shows them in autocomplete next time :/
-- I mean what's the point of <input type="tel" name="phone" /> then ?????
+- I mean what's the point of "input type="tel" name="phone" /" then ?????
