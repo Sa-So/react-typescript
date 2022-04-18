@@ -24,5 +24,11 @@ yarn add -D enzyme enzyme-adapter-react-16 jest jest-enzyme
 ### config of enzyme is diff 
 - but for cra it is easy.
 ```setupTests.js
-import Enzyme from 'enzyme' , EnzymeeAdapter from 
+import Enzyme from 'enzyme';
+import EnzymeAdapter from 'enzyme-adapter-react-16';
+Enzyme.configure({
+  adapter:new EnzymeAdapter(),
+  disableLifecycleMEthods: true
+});
 ```
+### git commit -m "Basic config"
