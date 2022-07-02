@@ -14,7 +14,10 @@ $ npm test -t 'Start-Checkout'
 > jest "Start-Checkout"
 Ran all test suites matching /Start-Checkout/i.
 ```
-
+# if above doesn't work
+```console
+npx jest path/to/my-test.js
+```
 # mock local & session storage
 ```setupJest.ts
 import 'jest-localstorage-mock'; 
