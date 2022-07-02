@@ -6,7 +6,10 @@
     "test-uncommited": "jest --onlyChanged",
     "test-watch": "jest --watch",
 ```
-
+# Run tests related to changed files based on hg/git (uncommitted files):
+```console
+npx jest -o
+```
 # to test a specific component (using regex on describe)
 ```console
 $ npm test -t 'Start-Checkout'
@@ -17,6 +20,10 @@ Ran all test suites matching /Start-Checkout/i.
 # if above doesn't work
 ```console
 npx jest path/to/my-test.js
+```
+# if aboove doesn't work + you can add multiple file paths.
+```console
+npx jest --findRelatedTests path/to/fileA.js path/to/fileB.js
 ```
 # mock local & session storage
 ```setupJest.ts
